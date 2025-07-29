@@ -163,13 +163,22 @@ th {
   transform: scale(1.05);
 }
 
-.organizer img {
+/* .organizer img {
   border-radius: 50%;
   width: 125px;
   height: 125px;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
+} */
+
+.organizer img {
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  object-fit: contain; /* 保留完整头像，不裁剪 */
+  background-color: #fff; /* 背景色填充空白区域 */
+  padding: 5px; /* 给头像留点边距 */
 }
 
 .organizer img:hover {
