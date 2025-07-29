@@ -1,0 +1,204 @@
+/* Reset and basic styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('../../assets/imgs/background.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+  margin-bottom: 0;
+}
+
+.hero h1 {
+  font-size: 65px;
+  font-weight: 500; /* More appropriate weight */
+  margin-bottom: 0.3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero .subtitle {
+  font-size: 50px;
+  font-weight: 50;
+  margin-bottom: 0.8em;
+}
+
+.hero .details {
+  font-size: 1.3rem;
+  opacity: 0.8;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero .details i {
+  margin-right: 10px;
+}
+
+
+/* Main Content Container */
+.container {
+  /* max-width: 1200px; */
+  /* margin: 30px auto; */
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Sections */
+section {
+  margin-bottom: 50px;
+}
+section h2 {
+  border-bottom: 2px solid #007BFF;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #007BFF;
+}
+section h3, section h4 {
+  margin-top: 20px;
+  color: #333;
+}
+p {
+  margin: 15px 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+table, th, td {
+  border: 1px solid #ddd;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: #f0f0f0;
+}
+
+/* Note in schedule */
+.note {
+  font-style: italic;
+  color: #555;
+}
+
+/* Speakers Grid */
+.speaker-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch; /* Ensure all speakers are shown */
+}
+.speaker {
+  flex: 1 1 200px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.speaker:hover {
+  transform: scale(1.05);
+}
+.speaker img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+.speaker img:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0;  /* Remove any extra whitespace between inline elements */
+  animation: scroll 20s linear infinite;
+  width: 100%; /* Ensure the carousel does not overflow */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  display: flex; /* Ensure the carousel items are contained within the wrapper */
+}
+
+/* Organizers Carousel */
+.organizers-carousel {
+  display: flex;
+  gap: 20px;
+  font-size: 16px; /* Reset font size for the children */
+  width: 100%; /* Ensure the carousel does not overflow */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Enable snap scrolling */
+  padding-bottom: 20px; /* Add padding to avoid scrollbar overlap */
+  justify-content: center; /* Center the carousel */
+}
+
+/* Organizer Card Styling */
+.organizer {
+  flex: 0 0 auto;
+  width: 150px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  scroll-snap-align: center;
+}
+
+.organizer:hover {
+  transform: scale(1.05);
+}
+
+.organizer img {
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.organizer img:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframes for continuous scrolling */
+/* 
+  Adjust the -50% if you know the exact width of one set of organizers. 
+  For a perfectly seamless loop, the translateX value should be equal to the total width 
+  of one duplicate set of items.
+*/
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .speaker-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .organizers-carousel {
+    justify-content: flex-start; /* Align items to the start on mobile */
+  }
+}
